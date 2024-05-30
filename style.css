@@ -1,0 +1,67 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(4) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(120, 39%, 93%, 1)'/><path d='M10-10L20 0v10L10 0zM20 0L10-10V0l10 10zm0 10L10 0v10l10 10zm0 10L10 10v10l10 10zM0 20l10-10v10L0 30zm0-10L10 0v10L0 20zM0 0l10-10V0L0 10z'  stroke-width='4' stroke='hsla(120, 26%, 86%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>"); /*https://pattern.monster/herringbone-2/*/
+  margin: 10vw;
+}
+
+h1 {
+  font-size: 5em;
+  text-align: center;
+  color: rgb(88, 122, 88);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+  text-align: center;
+  color: rgb(88, 122, 88);
+  font-size: 2em;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#xpscore {
+  font-weight: 650;
+}
+
+#introLeafie {
+  font-style: italic;
+}
+
+button {
+  background-color: rgb(88, 122, 88);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: white;
+  width: 10em;
+  height: 3em;
+  margin: 1vw;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer; /*https://www.w3schools.com/cssref/tryit.php?filename=trycss_cursor"*/
+}
+
+button:hover {
+  background-color: rgb(120, 165, 120);
+  font-size: 1.2em;
+}
+
+button:disabled {
+  background-color: grey;
+  cursor: not-allowed; /*https://www.w3schools.com/cssref/tryit.php?filename=trycss_cursor"*/
+}
+
+button:disabled:hover {
+  font-size: 1em;
+}
+
+img {
+  width: 40vw;
+}
+
+.photoleafie,
+.interactionbuttons {
+  display: flex;
+  justify-content: center;
+}
