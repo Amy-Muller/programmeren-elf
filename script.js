@@ -76,12 +76,13 @@ function updateTotalCount() {
 function updateTotalCountMinus() {
   if (totalCount > 0) {
     totalCount -= 1;
-  }
-  if (waterCount > 0) {
-    waterCount -= 1;
-  }
-  if (feedCount > 0) {
-    feedCount -= 1;
+    if (waterCount > 0 && totalCount > 0) {
+      waterCount -= 1;
+    } else if (feedCount > 0 && totalCount > 0) {
+      feedCount -= 1;
+    } else if (sleepCount > 0 && totalCount > 0) {
+      sleepCount -= 1;
+    }
   }
   xpscore.textContent = "Happiness: " + totalCount;
   buttonFeed.disabled = false;
