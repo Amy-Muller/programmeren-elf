@@ -50,12 +50,12 @@ buttonSleep.addEventListener("click", function () {
 });
 
 function updateFeedCount() {
-  feedCount = feedCount + 1;
+  if (feedCount < 3) feedCount = feedCount + 1;
   updateTotalCount();
 }
 
 function updateWaterCount() {
-  waterCount = waterCount + 1;
+  if (waterCount < 3) waterCount = waterCount + 1;
   updateTotalCount();
 }
 
@@ -76,14 +76,20 @@ function updateTotalCount() {
 function updateTotalCountMinus() {
   if (totalCount > 0) {
     totalCount -= 1;
-    if (waterCount > 0 && totalCount > 0) {
+    if (waterCount > 0) {
       waterCount -= 1;
-    } else if (feedCount > 0 && totalCount > 0) {
+    }
+    if (feedCount > 0) {
       feedCount -= 1;
-    } else if (sleepCount > 0 && totalCount > 0) {
+    }
+    if (sleepCount > 0) {
       sleepCount -= 1;
     }
+    updateTotalCountDisplay();
   }
+}
+
+function updateTotalCountDisplay() {
   xpscore.textContent = "Happiness: " + totalCount;
   buttonFeed.disabled = false;
   buttonWater.disabled = false;
