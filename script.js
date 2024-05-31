@@ -25,7 +25,7 @@ buttonWater.addEventListener("click", function () {
     alert("I'm not thirsty");
     buttonWater.disabled = true;
   }
-});
+}); 
 
 buttonFeed.addEventListener("click", function () {
   clearSleepInterval();
