@@ -4,6 +4,7 @@ const buttonWater = document.getElementById("water");
 const buttonFeed = document.getElementById("feed");
 const buttonSleep = document.getElementById("sleep");
 const xpscore = document.getElementById("xpscore");
+const happyMessage = document.getElementById("happyMessage");
 let waterCount = 0;
 let feedCount = 0;
 let sleepCount = 0;
@@ -25,7 +26,7 @@ buttonWater.addEventListener("click", function () {
     alert("I'm not thirsty");
     buttonWater.disabled = true;
   }
-}); 
+});
 
 buttonFeed.addEventListener("click", function () {
   clearSleepInterval();
@@ -68,10 +69,11 @@ function updateTotalCount() {
   xpscore.textContent = "Happiness: " + totalCount;
   if (totalCount > 1) {
     startCountInterval();
-  } 
+  }
+  updateHappyMessage();
 }
 
-function updateTotalCountMinus(){
+function updateTotalCountMinus() {
   if (totalCount > 0) {
     totalCount -= 1;
   }
@@ -85,6 +87,7 @@ function updateTotalCountMinus(){
   buttonFeed.disabled = false;
   buttonWater.disabled = false;
   buttonSleep.disabled = false;
+  updateHappyMessage();
 }
 
 function clearCountInterval() {
@@ -129,6 +132,20 @@ function clearSleepInterval() {
   if (sleepInterval) {
     clearInterval(sleepInterval);
     sleepInterval = null;
+  }
+}
+
+function updateHappyMessage() {
+  if (totalCount >= 10) {
+    happyMessage.classList.remove("hidden"); //https://developer.mozilla.org/en-US/docs/Web/API/Element/classList//
+    buttonWater.disabled = true;
+    buttonFeed.disabled = true;
+    buttonSleep.disabled = true;
+  } else {
+    happyMessage.classList.add("hidden");
+    buttonWater.disabled = false;
+    buttonFeed.disabled = false;
+    buttonSleep.disabled = false;
   }
 }
 

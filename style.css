@@ -60,6 +60,10 @@ img {
   width: 40vw;
 }
 
+.hidden {
+  display: none;
+}
+
 .photoleafie,
 .interactionbuttons {
   display: flex;
